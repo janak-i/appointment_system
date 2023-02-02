@@ -25,6 +25,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem 'jwt'
 gem 'byebug', '~> 11.1', '>= 11.1.3'
+gem 'active_model_serializers'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"

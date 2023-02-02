@@ -7,16 +7,19 @@ class UsersController < ApplicationController
 
 	def search
 		byebug
-
-		if params[:user_type].blank?
-			render json: { message: "user did not found" }
+		counsellors = User.where('email LIKE ?', "%#{params[:email]}%")
+		if counsellors.present?
+			search_data = CounsellorSerializer.new(counsellors).serializable_hash
+			render json: search_data, status: :ok
 		else
-			@parameter = params[:user_type].present?
-			@results= Counsellor.all
-			render json: @results
+			render json: { errors: 'Record Not Present' },
+			status: :unprocessable_entity
 		end
 	end
 end
+
+
+
 
 
 
