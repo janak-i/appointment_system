@@ -5,6 +5,8 @@ class CreateAppointments < ActiveRecord::Migration[7.0]
       t.time :time
       t.references :customer
       t.references :counsellor
+      t.references :service
+
       
 
       t.timestamps

@@ -1,4 +1,5 @@
 class Appointment < ApplicationRecord
-	belongs_to :customer, class 'User', foreign_key: 'customer_id'
-	belongs_to :counsellor, class 'User', foreign_key: 'counsellor_id'
+	belongs_to :customer, class_name: 'User'
+	belongs_to :counsellor, class_name: 'User'
+	belongs_to :service, class_name: 'User'
 end

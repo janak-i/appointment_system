@@ -16,10 +16,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_125134) do
     t.time "time"
     t.integer "customer_id"
     t.integer "counsellor_id"
+    t.integer "service_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["counsellor_id"], name: "index_appointments_on_counsellor_id"
     t.index ["customer_id"], name: "index_appointments_on_customer_id"
+    t.index ["service_id"], name: "index_appointments_on_service_id"
   end
 
   create_table "feedbacks", force: :cascade do |t|
